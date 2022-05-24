@@ -44,6 +44,8 @@ These guidelines aim to support a truly RESTful API. Here are a few exceptions:
     * If it doesn’t change the logic for each response, like OAuth info, put it in the header.
 * Specify optional fields in a comma separated list.
 * Formats should be in the form of api/v2/resource/{id}.json
+* A URL multiple words should be seperated with dash(`-`) symbol
+* A URL should includes only lowercase, not camel case, pascal case or snake case
 
 ### Good URL examples
 * List of magazines:
@@ -61,6 +63,8 @@ These guidelines aim to support a truly RESTful API. Here are a few exceptions:
     * GET http://www.example.gov/api/v1/magazines/1234.json?fields=title,subtitle,date
 * Add a new article to a particular magazine:
     * POST http://example.gov/api/v1/magazines/1234/articles
+* Use dash symbol for seperating words:
+    * GET http://example.gov/api/v1/recent-magazines/
 
 ### Bad URL examples
 * Non-plural noun:
@@ -71,6 +75,10 @@ These guidelines aim to support a truly RESTful API. Here are a few exceptions:
     * http://www.example.gov/magazine/1234/create
 * Filter outside of query string
     * http://www.example.gov/magazines/2011/desc
+* Pascal case, snake case and camel case:
+    * http://www.example.gov/recentMagazines
+    * http://www.example.gov/recent_magazines
+    * http://www.example.gov/RecentMagazines
 
 ## HTTP Verbs
 
